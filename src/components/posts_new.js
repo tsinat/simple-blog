@@ -7,14 +7,12 @@ class PostsNew extends Component {
     static contextTypes = {
         router: PropTypes.object
     };
-
     onSubmit(props) {
         this.props.createPost(props)
             .then(() => {
                 this.context.router.push('/');
             });
     }
-
     render() {
         const { fields: {title, categories, content}, handleSubmit } = this.props;
 
