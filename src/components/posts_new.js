@@ -19,6 +19,7 @@ class PostsNew extends Component {
         return (
             <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
                 <h3>Create a new Post</h3>
+
                 <div className={`form-group ${title.touched && title.invalid ? 'has-danger' : ''}`}>
                     <label>Title</label>
                     <input type='text' className='form-control' {...title}/>
@@ -26,6 +27,7 @@ class PostsNew extends Component {
                         {title.touched ? title.error : ''}
                     </div>
                 </div>
+
                 <div className={`form-group ${categories.touched && categories.invalid ? 'has-danger' : ''}`}>
                     <label>Categories</label>
                     <input type='text' className='form-control' {...categories}/>
@@ -33,6 +35,7 @@ class PostsNew extends Component {
                             {categories.touched ? categories.error : ''}
                         </div>
                 </div>
+
                 <div className={`form-group ${content.touched && content.invalid ? 'has-danger' : ''}`}>
                     <label>Content</label>
                     <textarea className="form-control" {...content}/>
@@ -40,6 +43,7 @@ class PostsNew extends Component {
                         {content.touched ? content.error : ''}
                     </div>
                 </div>
+                
                 <button type='submit' className="btn btn-primary">Submit</button>
                 <Link to="/" className="btn btn-danger">Cancel</Link>
             </form>
